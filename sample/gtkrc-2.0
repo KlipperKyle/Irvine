@@ -1,0 +1,10 @@
+# File created by KDE Gtk Config
+# Configs for GTK2 programs 
+
+gtk-font-name="Sans Serif  9"
+gtk-theme-name="Irvine"
+gtk-icon-theme-name="oxygen"
+gtk-fallback-icon-theme="hicolor"
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-menu-images=1
+gtk-button-images=1
