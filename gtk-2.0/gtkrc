@@ -1,0 +1,101 @@
+#
+# gtk-2.0/gtkrc
+#
+# GTK2 styles for Irvine theme
+
+gtk-color-scheme = "col_white:#ffffff
+col_lighter:#efece9
+col_light:#dfdcd9
+col_base:#d6d2d0
+col_dark:#c8c5c3
+col_darker:#b3afae
+col_darker2:#908d8b
+col_black:#000000
+col_selfg:#ffffff
+col_selbg:#585858
+col_selfg_light:#000000
+col_selbg_light:#b5b4b3
+"
+
+#gtk-color-scheme = "fg_color:#000000
+#bg_color:#cccccc
+#base_color:#ffffff
+#text_color:#000000
+#selected_bg_color:#666666
+#selected_fg_color:#ffffff
+#tooltip_bg_color:#cccccc
+#tooltip_fg_color:#000000
+#"
+
+style "irvine-default" {
+	fg[NORMAL] = @col_black
+	bg[NORMAL] = @col_base
+	text[NORMAL] = @col_black
+	base[NORMAL] = @col_white
+
+	bg[PRELIGHT] = @col_lighter
+
+	bg[ACTIVE] = @col_dark
+	text[ACTIVE] = @col_selfg_light
+	base[ACTIVE] = @col_selbg_light
+
+	fg[INSENSITIVE] = @col_darker2
+	bg[INSENSITIVE] = @col_base
+	text[INSENSITIVE] = @col_darker2
+	base[INSENSITIVE] = @col_lighter
+
+	fg[SELECTED] = @col_selfg
+	bg[SELECTED] = @col_selbg
+	text[SELECTED] = @col_selfg
+	base[SELECTED] = @col_selbg
+
+	# Scrollbars
+	GtkScrollbar::has_backward_stepper = 1
+	GtkScrollbar::has_secondary_forward_stepper = 0
+	GtkScrollbar::has_secondary_backward_stepper = 1
+	GtkScrollbar::has_forward_stepper = 1
+
+	# Solid focus line
+	GtkWidget::focus-line-pattern = "\000\000"
+	GtkWidget::interior-focus = 0
+}
+class "GtkWidget" style "irvine-default"
+
+style "irvine-tooltip" {
+	fg[NORMAL] = @col_black
+	bg[NORMAL] = @col_base
+	text[NORMAL] = @col_black
+	base[NORMAL] = @col_white
+}
+widget "gtk-tooltip" style "irvine-tooltip"
+widget "gtk-tooltips" style "irvine-tooltip"
+
+style "irvine-menuitem" {
+	fg[PRELIGHT] = @col_selfg
+	bg[PRELIGHT] = @col_selbg
+}
+class "*MenuItem" style "irvine-menuitem"
+
+style "irvine-button" {
+	bg[NORMAL] = @col_light
+	bg[INSENSITIVE] = @col_light
+}
+class "GtkButton" style "irvine-button"
+
+style "irvine-scalebar-scrollbar" {
+	bg[NORMAL] = @col_light
+	bg[INSENSITIVE] = @col_light
+	bg[ACTIVE] = @col_darker
+}
+widget_class "*Scale*" style "irvine-scalebar-scrollbar"
+widget_class "*Scrollbar*" style "irvine-scalebar-scrollbar"
+
+style "irvine-progressbar" {
+	fg[NORMAL] = @col_black
+	bg[NORMAL] = @col_darker
+	fg[PRELIGHT] = @col_selfg
+	bg[PRELIGHT] = @col_selbg
+}
+widget_class "*ProgressBar*" style "irvine-progressbar"
+
+# vi: set noet autoindent smartindent :
